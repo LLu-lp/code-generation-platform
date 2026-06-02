@@ -143,15 +143,6 @@ go run cmd/server/main.go
 
 ---
 
-## 📚 文档
-
-| 文档 | 说明 |
-|------|------|
-| [INTERVIEW.md](./INTERVIEW.md) | 面试高频 17 问 + 关键源码 |
-| [README_GO.md](./README_GO.md) | 详细技术文档 + 架构设计 |
-
----
-
 ## 📝 License
 
 MIT
