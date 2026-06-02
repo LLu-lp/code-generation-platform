@@ -1,0 +1,121 @@
+# ==================== Go 编译产物 ====================
+# 可执行二进制文件
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+server
+server.exe
+
+# 测试二进制文件
+*.test
+
+# 编译覆盖率输出
+*.out
+coverage.txt
+
+# Go 工作区
+go.work
+go.work.sum
+
+# ==================== 依赖管理 ====================
+# 通常不忽略 go.sum（用于依赖锁定），但如果需要可以取消注释
+# go.sum
+
+# vendor 目录（如果使用 go mod vendor）
+vendor/
+
+# ==================== IDE & 编辑器 ====================
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains (GoLand/IntelliJ)
+.idea/
+*.iml
+*.iws
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ==================== 操作系统 ====================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.directory
+
+# ==================== 环境配置（含敏感信息） ====================
+# 本地开发配置（含 API Key/密码）
+configs/config.local.yaml
+application-local.yml
+.env
+.env.local
+.env.*.local
+
+# 线上配置模板可以提交
+!configs/config.yaml
+!application-prod-sample.yml
+
+# ==================== 运行时文件 ====================
+# AI 生成的代码输出目录
+tmp/
+code_output/
+code_deploy/
+
+# 日志文件
+*.log
+logs/
+
+# 运行时数据
+runtime/
+
+# ==================== Node 依赖（AI 生成的 Vue 项目） ====================
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Vue 构建产物
+dist/
+.vite/
+
+# ==================== 其他 ====================
+# 临时文件
+temp/
+*.tmp
+*.bak
+
+# 备份文件
+*.orig
+*.old
+
+# 压缩包
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+go/
+*.md

@@ -1,0 +1,105 @@
+# Go 语言版本 - configs
+# 将 config.yaml 复制为 config.local.yaml 并修改配置项
+
+server:
+  port: 8123
+  context-path: /api
+  mode: debug  # debug | release | test
+
+database:
+  driver: mysql
+  host: localhost
+  port: 3306
+  database: yu_ai_code_mother
+  username: root
+  password: "root"
+  charset: utf8mb4
+  max-idle-conns: 10
+  max-open-conns: 100
+  conn-max-lifetime-minutes: 60
+
+redis:
+  host: 154.12.20.161
+  port: 6379
+  password: "yutouni666."
+  db: 5
+  ttl: 3600
+
+session:
+  store-type: redis
+  timeout-seconds: 2592000  # 30 days
+  cookie-max-age: 2592000
+
+ai:
+  # 主对话模型
+  chat-model:
+    provider: openai  # openai | deepseek | qwen
+    base-url: https://api.deepseek.com
+    api-key: "<your-api-key>"
+    model-name: deepseek-chat
+    max-tokens: 8192
+    temperature: 0.7
+    log-requests: true
+    log-responses: true
+    max-retries: 3
+
+  # 流式对话模型
+  streaming-chat-model:
+    base-url: https://api.deepseek.com
+    api-key: "<your-api-key>"
+    model-name: deepseek-chat
+    max-tokens: 8192
+    temperature: 0.7
+    log-requests: true
+    log-responses: true
+
+  # 推理模型（复杂推理任务）
+  reasoning-model:
+    base-url: https://api.deepseek.com
+    api-key: "<your-api-key>"
+    model-name: deepseek-reasoner
+    max-tokens: 32768
+    temperature: 0.1
+    log-requests: true
+    log-responses: true
+
+  # 路由模型（简单分类任务）
+  routing-model:
+    base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+    api-key: "<your-api-key>"
+    model-name: qwen-turbo
+    max-tokens: 100
+    temperature: 0.1
+    log-requests: true
+    log-responses: true
+
+  # 图片生成模型
+  image-model:
+    api-key: "<your-api-key>"
+    model-name: wan2.2-t2i-flash
+
+cos:
+  host: your-custom-domain.com
+  secret-id: your-secret-id
+  secret-key: your-secret-key
+  region: ap-shanghai
+  bucket: your-bucket-name
+
+pexels:
+  api-key: "<your-api-key>"
+
+code:
+  output-root-dir: ./tmp/code_output
+  deploy-root-dir: ./tmp/code_deploy
+  deploy-host: http://localhost
+
+rate-limit:
+  ai-chat-rate: 5
+  ai-chat-interval-seconds: 60
+  default-rate: 100
+  default-interval-seconds: 60
+
+swagger:
+  enable: true
+  username: admin
+  password: "123456"
